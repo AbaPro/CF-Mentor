@@ -235,52 +235,6 @@ namespace eval ttk::theme::forest-light {
                 active $I(rect-hover) \
             ] -border 4 -sticky nsew
 
-        # Toolbutton
-        ttk::style configure Toolbutton -padding {8 4 8 4} -width -10 -anchor center
-
-        ttk::style element create Toolbutton.button image \
-            [list $I(empty) \
-            	{selected disabled} $I(empty) \
-                disabled $I(empty) \
-                selected $I(rect-basic) \
-                pressed $I(rect-basic) \
-                active $I(rect-basic) \
-            ] -border 4 -sticky nsew
-
-        # Menubutton
-        ttk::style configure TMenubutton -padding {8 4 4 4}
-
-        ttk::style element create Menubutton.button image \
-            [list $I(rect-basic) \
-                disabled $I(rect-basic) \
-                pressed $I(rect-basic) \
-                active $I(rect-hover) \
-            ] -border 4 -sticky nsew 
-
-        ttk::style element create Menubutton.indicator image \
-            [list $I(down) \
-                active   $I(down) \
-                pressed  $I(down) \
-                disabled $I(down) \
-            ] -width 15 -sticky e
-
-        # OptionMenu
-        ttk::style configure TOptionMenu -padding {8 4 4 4}
-
-        ttk::style element create OptionMenu.button image \
-            [list $I(rect-basic) \
-                disabled $I(rect-basic) \
-                pressed $I(rect-basic) \
-                active $I(rect-hover) \
-            ] -border 4 -sticky nsew 
-
-        ttk::style element create OptionMenu.indicator image \
-            [list $I(down) \
-                active   $I(down) \
-                pressed  $I(down) \
-                disabled $I(down) \
-            ] -width 15 -sticky e
-
         # AccentButton
         ttk::style configure Accent.TButton -padding {8 4 8 4} -width -10 -anchor center -foreground #eeeeee
 
@@ -292,73 +246,6 @@ namespace eval ttk::theme::forest-light {
                 pressed $I(rect-accent) \
                 active $I(rect-accent-hover) \
             ] -border 4 -sticky nsew
-
-        # Checkbutton
-        ttk::style configure TCheckbutton -padding 4
-
-        ttk::style element create Checkbutton.indicator image \
-            [list $I(check-unsel-accent) \
-                {alternate disabled} $I(check-tri-basic) \
-                {selected disabled} $I(check-basic) \
-                disabled $I(check-unsel-basic) \
-                {pressed alternate} $I(check-tri-hover) \
-                {active alternate} $I(check-tri-hover) \
-                alternate $I(check-tri-accent) \
-                {pressed selected} $I(check-hover) \
-                {active selected} $I(check-hover) \
-                selected $I(check-accent) \
-                {pressed !selected} $I(check-unsel-pressed) \
-                active $I(check-unsel-hover) \
-            ] -width 26 -sticky w
-
-        # Switch
-        ttk::style element create Switch.indicator image \
-            [list $I(off-accent) \
-                {selected disabled} $I(on-basic) \
-                disabled $I(off-basic) \
-                {pressed selected} $I(on-accent) \
-                {active selected} $I(on-hover) \
-                selected $I(on-accent) \
-                {pressed !selected} $I(off-accent) \
-                active $I(off-hover) \
-            ] -width 46 -sticky w
-
-        # ToggleButton
-        ttk::style configure ToggleButton -padding {8 4 8 4} -width -10 -anchor center -foregound $colors(-fg)
-
-        ttk::style map ToggleButton -foreground \
-            [list {pressed selected} $colors(-fg) \
-                {pressed !selected} #ffffff \
-                selected #ffffff]
-
-        ttk::style element create ToggleButton.button image \
-            [list $I(rect-basic) \
-                {selected disabled} $I(rect-accent-hover) \
-                disabled $I(rect-basic) \
-                {pressed selected} $I(rect-basic) \
-                {active selected} $I(rect-accent-hover) \
-                selected $I(rect-accent) \
-                {pressed !selected} $I(rect-accent) \
-                active $I(rect-hover) \
-            ] -border 4 -sticky nsew
-
-        # Radiobutton
-        ttk::style configure TRadiobutton -padding 4
-
-        ttk::style element create Radiobutton.indicator image \
-            [list $I(radio-unsel-accent) \
-                {alternate disabled} $I(radio-tri-basic) \
-                {selected disabled} $I(radio-basic) \
-                disabled $I(radio-unsel-basic) \
-                {pressed alternate} $I(radio-tri-hover) \
-                {active alternate} $I(radio-tri-hover) \
-                alternate $I(radio-tri-accent) \
-                {pressed selected} $I(radio-hover) \
-                {active selected} $I(radio-hover) \
-                selected $I(radio-accent) \
-                {pressed !selected} $I(radio-unsel-pressed) \
-                active $I(radio-unsel-hover) \
-            ] -width 26 -sticky w
 
         # Scrollbar
         ttk::style element create Horizontal.Scrollbar.trough image $I(hor-basic) \
@@ -402,19 +289,6 @@ namespace eval ttk::theme::forest-light {
                 active $I(thumb-vert-hover) \
             ] -sticky {}
 
-        # Progressbar
-        ttk::style element create Horizontal.Progressbar.trough image $I(hor-basic) \
-            -sticky ew
-
-        ttk::style element create Horizontal.Progressbar.pbar image $I(hor-accent) \
-            -sticky ew
-
-        ttk::style element create Vertical.Progressbar.trough image $I(vert-basic) \
-            -sticky ns
-
-        ttk::style element create Vertical.Progressbar.pbar image $I(vert-accent) \
-            -sticky ns
-
         # Entry
         ttk::style element create Entry.field image \
             [list $I(border-basic) \
@@ -424,43 +298,6 @@ namespace eval ttk::theme::forest-light {
                 focus $I(border-accent) \
                 hover $I(border-hover) \
             ] -border 5 -padding {8} -sticky nsew
-
-        # Combobox
-        ttk::style map TCombobox -selectbackground [list \
-            {!focus} $colors(-selectbg) \
-            {readonly hover} $colors(-selectbg) \
-            {readonly focus} $colors(-selectbg) \
-        ]
-            
-        ttk::style map TCombobox -selectforeground [list \
-            {!focus} $colors(-selectfg) \
-            {readonly hover} $colors(-selectfg) \
-            {readonly focus} $colors(-selectfg) \
-        ]
-
-        ttk::style element create Combobox.field image \
-            [list $I(border-basic) \
-                {readonly disabled} $I(rect-basic) \
-                {readonly pressed} $I(rect-basic) \
-                {readonly focus hover} $I(rect-hover) \
-                {readonly focus} $I(rect-hover) \
-                {readonly hover} $I(rect-hover) \
-                {focus hover} $I(border-accent) \
-                readonly $I(rect-basic) \
-                invalid $I(border-invalid) \
-                disabled $I(border-basic) \
-                focus $I(border-accent) \
-                hover $I(border-hover) \
-            ] -border 5 -padding {8 8 28 8}
-
-        ttk::style element create Combobox.button image \
-            [list $I(combo-button-basic) \
-                 {!readonly focus} $I(combo-button-focus) \
-                 {readonly focus} $I(combo-button-hover) \
-                 {readonly hover} $I(combo-button-hover)
-            ] -border 5 -padding {2 6 6 6}
-            
-        ttk::style element create Combobox.arrow image $I(down) -width 15 -sticky e
 
         # Spinbox
         ttk::style element create Spinbox.field image \
